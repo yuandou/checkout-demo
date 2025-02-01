@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Checkout Web Components: Flow Component</title>
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+
+    <body>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo" class="logo" />
+        </div>
+
+    <div class="container">
+        <div class="left">
+    <article class="item" aria-label="Product: iPhone 16 Pro">
+        <h2>iPhone 16 Pro</h2>
+        <div class="item-details">
+            <p class="price">$999.00</p>
+            <label for="qty-iphone16pro">Qty: 1</label>
+        </div>
+    </article>
+    <article class="item" aria-label="Product: iPhone 15">
+        <h2>iPhone 15</h2>
+        <div class="item-details">
+            <p class="price">$699.00</p>
+            <label for="qty-iphone15">Qty: 1</label>
+        </div>
+    </article>
+    <article class="item" aria-label="Total Price">
+        <h2>Total</h2>
+        <p class="total-price" id="total-price">$1698.00</p>
+    </article>
+    </div>
+
+
+        <div class="right">
+            <div id="successToast" class="toast success">
+                <span>The payment was successful</span>
+            </div>
+    
+            <div id="failedToast" class="toast failed">
+                <span>The payment failed, try again</span>
+            </div>
+
+            <div class="container">
+                <div id="flow-container"></div>
+            </div>
+            <span id="error-message"></span>
+            <span id="successful-payment-message"></span>
+        </div>
+    </div>
+
+        <script src="https://checkout-web-components.checkout.com/index.js"></script>
+
+        <script src="app.js"></script>
+    </body>
+</html>
