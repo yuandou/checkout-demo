@@ -1,5 +1,7 @@
 const express = require("express");
 const fetch = require("node-fetch");
+
+const https = require('https');
 const app = express();
 
 app.use(express.static("public"));
@@ -61,8 +63,8 @@ app.post("/create-payment-sessions", async (_req, res) => {
         risk: {
           enabled: true,
         },
-        success_url: "http://localhost:3000/?status=succeeded",
-        failure_url: "http://localhost:3000/?status=failed",
+        success_url: "https://localhost/?status=succeeded",
+        failure_url: "https://localhost/?status=failed",
         metadata: {},
         items: [
           {
@@ -80,6 +82,14 @@ app.post("/create-payment-sessions", async (_req, res) => {
   res.status(request.status).send(parsedPayload);
 });
 
-app.listen(3000, () =>
-  console.log("Node server listening on port 3000: http://localhost:3000/")
-);
+// app.listen(3000, () =>
+//   console.log("Node server listening on port 3000: http://localhost:3000/")
+// );
+const fs = require('fs');
+
+https.createServer({
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+}, app).listen(443, () => {
+  console.log('Listening...')
+});
