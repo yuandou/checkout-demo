@@ -12,4 +12,4 @@ npm install
 npm run start
 ```
 
-3. Go to [http://localhost:3000/index.html](http://localhost:3000/index.html)
+3. Go to [https://localhost/index.html](https://localhost/index.html)
