@@ -73,8 +73,8 @@
     environment: "sandbox",
     // locale: "en-GB",
     locale: "zh-HK",
-    // locale: "af",
-    // appearance,
+    // locale: "nl-NL",
+    appearance,
     // componentOptions,
     paymentSession,
     onReady: () => {
